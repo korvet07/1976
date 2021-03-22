@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Позиционирование и JS</title>
+    <script type="text/javascript" src="/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=oUrtYx_6UJcliefOi4xKjDn8LlKNjaT7PXUawBUptIrY9aAtwv--1EyHXnhPHhk2wrh76PMHxQ4JRDDI3xBgrA" charset="UTF-8"></script>
+    <style>
+        body {
+            background: url(/img/more.jpg) 100% 100% no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #airplane {
+            width: 200px;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/img/airplane.png" id="airplane" alt="">;
+
+    <script>
+        let airplane = document.getElementById("airplane");
+        let i = 0;
+        let j = 0;
+        let moveInRight = true;
+
+        function moveairplane() {
+            if (i + airplane.width <= (window.innerWidth) * 0.2 && moveInRight) {
+                airplane.style.transform = "scale(-1,1)";
+                airplane.style.left = (++i) + "px";
+            } else if (i + airplane.width > (window.innerWidth) * 0.2, i + airplane.width <= (window.innerWidth) * 0.4 && moveInRight) {
+                airplane.style.top = (++j) + "px";
+                airplane.style.left = (++i) + "px";
+            } else if (i + airplane.width > (window.innerWidth) * 0.4, i + airplane.width <= (window.innerWidth) * 0.6 && moveInRight) {
+                airplane.style.left = (++i) + "px";
+            } else if (i + airplane.width > (window.innerWidth) * 0.6, i + airplane.width <= (window.innerWidth) * 0.8 && moveInRight) {
+                airplane.style.top = (--j) + "px";
+                airplane.style.left = (++i) + "px";
+            } else if (i + airplane.width > (window.innerWidth) * 0.8, i + airplane.width <= (window.innerWidth) && moveInRight) {
+                airplane.style.left = (++i) + "px";
+            } else {
+                moveInRight = false;
+                airplane.style.transform = "scale(1,1)";
+                airplane.style.left = (--i) + "px";
+                if (i < 5) moveInRight = true;
+            }
+        }
+        setInterval(moveairplane, 7);
+    </script>
+
+</body>
+
+</html>

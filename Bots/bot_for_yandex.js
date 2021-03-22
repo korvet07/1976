@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://www.yandex.ru/*
+// @match        https://yandex.ru/*
 // @grant        none
 // ==/UserScript==
 let keywords = ["Как звучит флейта", "Валторна", "Тромбон", "Кларнет", "Фагот", "Гобой", "Саксофон"];
